@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% import 'macros.jinja' as macros %}
+
+{% block title %}{{ pageTitle }}{% endblock %}
+{% block login %}{% autoescape false %}{{ macros.render_loggedin(userinfo) if userinfo is defined else macros.render_login_form()}}{% endautoescape %}{% endblock %}
+{% block sidebar %}{% autoescape false %}{{ macros.render_sidebar(sidebar, pageTitle) }}{% endautoescape %}{% endblock %}
+{% block content %}{{ pageContent }}{% endblock %}

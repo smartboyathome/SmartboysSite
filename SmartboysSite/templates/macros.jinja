@@ -1,0 +1,28 @@
+{% macro render_login_form() %}
+    <div id="login">
+        <form method=post action="/login">
+            <input type="text" name="username" id="username" value="Username" onfocus="toggleInput(this, true);" onblur="toggleInput(this, false);">
+            <input type="password" name="password" id="password" value="Password" onfocus="toggleInput(this, true);" onblur="toggleInput(this, false);">
+            <input type="image" src="/static/checkmark-unfocused.png" width="20px" value="Login" id="loginbutton">
+        </form>
+    </div>
+{% endmacro %}
+
+{% macro render_loggedin(userinfo) %}
+    <div id="loggedIn">
+        Welcome, {{ userinfo[0] }}! | <a href="/settings">My Settings</a> | {% if userinfo[1] == ('all' or 'admin') %} <a href="/admin">Admin Panel</a> | {% endif %} <a href="/logout">Logout</a>
+    </div>
+{% endmacro %}
+
+{% macro render_sidebar(sidebar, pageTitle) %}
+    {% for path, title, settings in sidebar %}
+        {% if settings == 1 %}
+            {% if title == pageTitle %}
+                <li class="active">
+            {% else %}
+                <li>
+            {% endif %}
+            <a href="{{ path }}">{{title}}</a></li>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}

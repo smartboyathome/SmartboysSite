@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd" >
+<!-- NEEDED VARIABLES: pageTitle, username -->
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Smartboy's Site: {{ pageTitle }}</title>
+    	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='global.css') }}">
+    </head>
+    <body>
+        <div class="rounded">
+            <div class="top"><div class="middle"></div><div class="right"></div></div>
+            <div class="middle"><div class="right">
+                <div class="header">
+                    <div class="logo">
+                        <img src="images/SmartboysSite.png" alt="Smartboy's Site">
+                    </div>
+                    {% if not username %}
+                        <div class="login">
+                            <form method=post action="/login/admission.php">
+                                <input type="text" name="alias" value="Username" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+                                <input type="password" name="keyword" value="Password" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+                                <input type="submit" value="Login">
+                            </form>
+                        </div>
+                    {% else %}
+                            <div class="loggedIn">
+                            Welcome, {{ username }}! <a href="/login/logout.php">Logout</a>
+                            </div>
+                    {% endif %}
+                </div>
+                <div class="navbar">
+                    <ul id="navlist">
+                        <li id="active"><a href="/" id="home">Home</a></li>
+                        <li><a href="/wordpress/" id="blog">Blog</a></li>
+                        <li><a href="/files/" id="repo">File Repository</a></li>
+                        <li><a href="/book/">The Story of a Wolf</a></li>
+                        {% if pageTitle == "File Repository" and username %}
+                            <li><a href="/files/upload.php">Upload File</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="content">
+
+				</div>
+			</div></div>
+			<div class="bottom"><div class="middle"></div><div class="right"></div></div>
+    	</div>
+		<div class="footer"><p style="color:#ffffff;">Website and contents ©2009 Alex 'smartboyathome' Abbott. All rights reserved.</p></div>
+    </body>
+</html>

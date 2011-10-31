@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Smartboy's Site: {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css') }}">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', 'base.js') }}"></script>
+    </head>
+
+    <body>
+        <div id="background">
+            <div id="bg-bar"></div>
+        </div>
+        <div id="page">
+            <div id="main-top">
+                <div id="top-left" class="corner"></div>
+                <div id="top-right" class="corner"></div>
+                <div id="top-mid" class="mid"></div>
+            </div>
+            <div id="left">
+                <div id="right">
+                    <div id="content">
+                        <div id="header">
+                            <div id="logo">
+                                <div id="siteName">Smartboy's Site</div>
+                                <div id="siteTag">Artist, Writer, Hacker, and more...</div>
+                            </div>
+                            {% block login %}{% endblock %}
+                            <div id="sidebar"><ul>
+                                {% block sidebar %}{% endblock %}
+                            </ul></div>
+                        </div>
+                        <div id="main">
+                            {% block content %}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="main-bot">
+                <div id="bot-left" class="corner"></div>
+                <div id="bot-right" class="corner"></div>
+                <div id="bot-mid" class="mid"></div>
+            </div>
+            <div id="reki"><img src="/static/corner-banner.png"></div>
+            <div id="footer">
+                Website and contents &copy;2009-{{ year }} Alex 'smartboyathome' Abbott<br>
+                Design inspired by <a href="http://fav.me/dbkl48">patqueisler</a> | 'Kyureki' images &copy;2011{%if year>2011%}-{{year}}{%endif%} <a href="http://spagetti-sauce.deviantart.com">Maggie Roy</a>
+            </div>
+        </div>
+    </body>
+</html>

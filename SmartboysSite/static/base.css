@@ -1,0 +1,258 @@
+@font-face {
+    font-family: 'Sony Sketch EF';
+    src: url(Sony_Sketch_EF.eof);
+    src: url(Sony_Sketch_EF.ttf);
+}
+
+@font-face {
+    font-family: 'Jellyka - Estryas Handwriting';
+    src: url(Jellyka_Estrya_Handwriting.eof);
+    src: url(Jellyka_Estrya_Handwriting2.ttf);
+}
+
+@font-face {
+    font-family: 'Hand of Sean';
+    src: url(handsean.ttf);
+}
+
+#background {
+    background: url(bg-tile.png) repeat;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#bg-bar {
+    background: url(bg-bar.png) repeat-x;
+    position: absolute;
+    top: 97px;
+    left: 0px;
+    width: 100%;
+    height: 53px;
+}
+
+#bg-bar2 {
+    background: url(bg-bar2.png) repeat-x;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 37px;
+}
+
+#page {
+    width: 85%;
+    position: relative;
+    left: 7.5%;
+    top: 25px;
+    padding-bottom: 50px;
+}
+
+#header {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+}
+
+#logo {
+    position: absolute;
+    top: -17px;
+    left: -2px;
+    font-family: 'Sony Sketch EF';
+    color: white;
+}
+
+#siteName {
+    font-size: 48px;
+}
+
+#siteTag {
+    font-size: 24px;
+    font-style: italic;
+}
+
+#login {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    height: 25px;
+    color: white;
+}
+
+#username, #password {
+    border: 1px solid #190f08;
+    border-color: rgba(0,0,0,.15);
+    background: #2f2216;
+    background: rgba(0,0,0,0);
+    width: 120px;
+}
+
+#loggedIn {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    color: rgba(255,255,255,.2);
+    font-family: 'Sans';
+    font-size: 10px;
+    font-weight: normal;
+    /*margin-top: -7px;
+    margin-right: -7px;*/
+}
+
+#loggedIn a {
+    color: rgba(255,255,255,.2);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#sidebar {
+    position: absolute;
+    top: 72px;
+    left: -14px;
+    width: 124px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+#sidebar a {
+    font-family: 'Sans';
+    font-size: 14px;
+    text-decoration: none;
+    color: #7d5a3a;
+}
+
+#sidebar li {
+    padding-top: 3px;
+    padding-bottom: 4px;
+}
+
+#sidebar li.active a {
+    margin-left: -2px;
+    margin-top: -2px;
+    text-shadow: 2px 2px 2px #190f08;
+}
+
+#sidebar li:hover a {
+    margin-left: -2px;
+    margin-top: -2px;
+    text-shadow: 2px 2px 2px #190f08;
+}
+
+#content {
+    background: #2f2216;
+    margin-left: 52px;
+    margin-right: 52px;
+    padding-bottom: 42px;
+    min-height: 304px;
+}
+
+#main {
+    padding-top: 70px;
+    padding-left: 110px;
+    font-family: 'Sans';
+    font-size: 12px;
+    text-align: justify;
+    color: white;
+    position: relative; /* thanks to dsonesuk of */
+    z-index: 2; /* the w3schools forums for this */
+}
+
+.corner {
+    width: 52px;
+    height: 52px;
+}
+
+.mid {
+    height: 100%;
+    margin-left: 52px;
+    margin-right: 52px;
+}
+
+#main-top {
+    float: top;
+    height: 52px;
+    width: 100%;
+}
+
+#top-left {
+    float: left;
+    background: url(main-top-left.png);
+}
+
+#top-right {
+    float: right;
+    background: url(main-top-right.png);
+}
+
+#top-mid {
+    background: url(main-top-mid.png) repeat-x;
+}
+
+#main-bot {
+    float: bottom;
+    height: 52px;
+    width: 100%;
+}
+
+#bot-left {
+    float: left;
+    background: url(main-bot-left.png);
+}
+
+#bot-right {
+    float: right;
+    background: url(main-bot-right.png);
+}
+
+#bot-mid {
+    background: url(main-bot-mid.png) repeat-x;
+}
+
+#left {
+    background: url(main-mid-left.png) repeat-y left;
+    clear: both;
+    width: 100%;
+}
+
+#right {
+    background: url(main-mid-right.png) repeat-y right;
+}
+
+#reki {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin-left: -52px;
+    margin-bottom: -10px;
+    z-index: 1;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    right: 25px;
+    font-family: 'Hand of Sean';
+    font-size: 12px;
+    font-style: italic;
+    line-height: 18px;
+    /*bottom: 44px;
+    right: 45px;
+    font-family: 'Jellyka - Estryas Handwriting';
+    font-size: 36px;
+    line-height: 38px;*/
+    color: white;
+    opacity: .5;
+    text-align: right;
+}
+
+#footer a {
+    text-decoration: none;
+    color: white;
+}
