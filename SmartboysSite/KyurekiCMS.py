@@ -2,10 +2,23 @@ from flask import Flask
 from pymongo import Connection
 import yaml, Plugins
 from Plugins.Pages import blueprint
+from datetime import datetime
 
 class KyurekiCMS(object):
     def __init__(self):
         self.app = Flask(__name__)
+        self.app.jinja_env.filters['datetimeformat'] = self.datetimeformat
+        self.app.jinja_env.filters['todaysdate'] = self.todaysdate
+        self.app.jinja_env.filters['int'] = self.int
+
+    def datetimeformat(self, value, format='%Y-%m-%d %I:%M:%S %p'):
+        return value.strftime(format)
+    
+    def todaysdate(self, format):
+        return datetime.today().strftime(format)
+        
+    def int(self, num):
+        return int(num)
 
     def loadConfig(self, conffile):
         f = open(conffile)

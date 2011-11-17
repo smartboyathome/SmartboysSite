@@ -1,6 +1,5 @@
 from flask import Blueprint
 
-blueprint = Blueprint('Pages', __name__)
-db = None
+blueprint = Blueprint('Pages', 'SmartboysSite.Plugins.Pages')
 
 from SmartboysSite.Plugins.Pages import View
